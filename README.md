@@ -2,15 +2,15 @@
 Explaining all design patterns and their importance using Python code examples
 
 -------------------------------------------------------------------------------
-| # Design Pattern        | # Description                                       |
+| Design Pattern        | Description                                    |
 -------------------------------------------------------------------------------
-| Creational Patterns   | Patterns focused on object creation.              |
+| Creational Patterns   | Patterns focused on object creation.             |
 -------------------------------------------------------------------------------
-|# 1. Singleton         | Ensures a class has only one instance.            |
-|# 2. Factory Method    | Creates objects through an interface.            |
-|# 3. Abstract Factory  | Creates families of related objects.             |
-|# 4. Builder           | Separates complex object construction.           |
-|# 5. Prototype         | Creates new objects by copying an existing one.  |
+| 1. Singleton         | Ensures a class has only one instance.            |
+| 2. Factory Method    | Creates objects through an interface.            |
+| 3. Abstract Factory  | Creates families of related objects.             |
+| 4. Builder           | Separates complex object construction.           |
+| 5. Prototype         | Creates new objects by copying an existing one.  |
 -------------------------------------------------------------------------------
 | Structural Patterns   | Patterns focused on composition of classes/objects|
 -------------------------------------------------------------------------------
