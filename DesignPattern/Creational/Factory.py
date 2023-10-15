@@ -9,6 +9,7 @@
 # ABC = Abstract Base Class
 from abc import abstractmethod, ABC
 
+
 class FactoryObject(ABC):
     """
         The Creator class declares the factory method that is supposed to return an
@@ -17,16 +18,24 @@ class FactoryObject(ABC):
 
         Note: It has only one product type
     """
+
     @abstractmethod
     def createFactory(self):
         pass
 
+    """
+    classmethod is used as factory method to get new variation of the class
+    with different parameters.
+    It takes class as its first parameter.
+    """
+    @classmethod
+    def get_instance(cls, var):
+        print("new object with new parameters created. var: ", var)
+        return cls
 
     def defaultImplementation(self):
         product = self.createFactory()
         print(product.createProduct())
-
-
 
 
 """
@@ -34,31 +43,38 @@ class FactoryObject(ABC):
     must implement. Interface class will always all abstract method.
     We can have multiple interface for building different common functionality of products 
     """
+
+
 class Product(ABC):
 
     @abstractmethod
     def createProduct(self):
         pass
 
+
 """
 Concrete Creators override the factory method in order to change the resulting
 product's type.
 """
+
+
 class ConcreteCreatorA(FactoryObject):
 
-    def createFactory(self)->Product:
+    def createFactory(self) -> Product:
         return ConcreteProductA()
 
 
 class ConcreteCreatorB(FactoryObject):
 
-    def createFactory(self)->Product:
+    def createFactory(self) -> Product:
         return ConcreteProductB()
 
 
 """
 Concrete Products provide various implementations of the Product interface.
 """
+
+
 class ConcreteProductA(Product):
 
     def createProduct(self):
@@ -71,16 +87,18 @@ class ConcreteProductB(Product):
         return "Concrete Product B"
 
 
-
 def clientCode(factory_object: FactoryObject):
-
     print(f' do something')
     obj = factory_object.createFactory()
     print(obj)
     print(factory_object.defaultImplementation())
 
 
-if __name__== "__main__":
+if __name__ == "__main__":
+
+    obj = FactoryObject.get_instance(123)
+    print(obj)
+
     print("start code")
     clientCode(ConcreteCreatorA())
 
@@ -88,4 +106,3 @@ if __name__== "__main__":
     clientCode(ConcreteCreatorB())
 
     print("end code")
-
